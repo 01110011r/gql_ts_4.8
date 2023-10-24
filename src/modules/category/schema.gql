@@ -1,0 +1,26 @@
+type Query{
+    category(category_id:String):Category
+    categoryes:[Category]
+}
+
+
+
+type Mutation{
+    addcategory(title:String):Res
+    updatecategory(category_id:String, title:String):Res
+    deletecategory(category_id:String):Res
+}
+
+
+type Category{
+    category_id:String
+    title:String
+}
+
+
+type Res{
+    msg:String
+    data:Any
+}
+
+scalar Any

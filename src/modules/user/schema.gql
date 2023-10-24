@@ -1,0 +1,32 @@
+type Query{
+    user(user_id:ID):User
+    users:[User]
+}
+
+
+
+type Mutation{
+    createuser(firstname:String, lastname:String, username:String, password:String, email:String):Res
+    updateuser(user_id:ID, firstname:String, lastname:String, username:String, email:String, password:String):Res
+    deleteuser(user_id:ID):Res
+}
+
+
+type User{
+    user_id:ID
+    firstname:String
+    lastname:String
+     username:String
+     password:String
+     email:String
+     categories:Any
+     feedbacks:Any
+}
+
+
+type Res{
+    msg:String
+    data:Any
+}
+
+scalar Any             

@@ -1,0 +1,27 @@
+type Query{
+    feedback(feedback_id:ID):Feedback
+    feedbacks:[Feedback]
+    feedbackbycategory(feedback_id:ID):[Feedback]
+}
+
+
+type Mutation{
+addFeedback(time:String, category:String, detail:String):Res
+updateFeedback(feedback_id:ID, time:String, category:String, detail:String):Res
+deleteFeedback(feedback_id:ID):Res
+}
+
+
+type Feedback{
+    feedback_id:ID
+    time:String
+    category:String
+    detail:String
+}
+
+type Res{
+    msg:String
+    data:Any
+}
+
+scalar Any
